@@ -119,9 +119,6 @@ public class Lista implements ILista {
 
                 actual.setSiguiente(actual.getSiguiente().getSiguiente());
 
-
-
-
             }
         }
     }
