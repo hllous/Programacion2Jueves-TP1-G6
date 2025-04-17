@@ -6,11 +6,14 @@ public class Nodo implements INodo {
 
     private int dato;
     private INodo siguiente;
+    private INodo anterior;
 
     public Nodo(int dato) {
         this.dato = dato;
         this.siguiente = null;
     }
+
+    // Getter y Setters
 
     @Override
     public int getDato() {
@@ -32,4 +35,9 @@ public class Nodo implements INodo {
         this.siguiente = nodo;
     }
 
+    @Override
+    public INodo getAnterior() { return anterior; }
+
+    @Override
+    public void setAnterior(INodo anterior) { this.anterior = anterior; }
 }

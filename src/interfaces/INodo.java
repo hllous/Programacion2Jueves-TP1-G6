@@ -6,5 +6,7 @@ public interface INodo {
     public void setDato(int dato);
     public INodo getSiguiente();
     public void setSiguiente(INodo nodo);
+    public INodo getAnterior();
+    public void setAnterior(INodo nodo);
 
 }

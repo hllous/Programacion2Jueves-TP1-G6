@@ -5,6 +5,7 @@ import interfaces.*;
 public class Lista implements ILista {
 
     private INodo primero;
+    private INodo ultimo;
 
     public Lista() {
         this.primero = null;
@@ -28,11 +29,7 @@ public class Lista implements ILista {
         if (esVacia()) {
             primero = nuevo;
         } else {
-            INodo actual = primero;
-            while (actual.getSiguiente() != null) {
-                actual = actual.getSiguiente();
-            }
-            actual.setSiguiente(nuevo);
+            ultimo.setSiguiente(nuevo);
         }
     }
 
@@ -106,6 +103,8 @@ public class Lista implements ILista {
 
         actual.setSiguiente(actual.getSiguiente().getSiguiente());
     }
+
+    // Obtener
 
     @Override
     public int obtenerPrimero() {
