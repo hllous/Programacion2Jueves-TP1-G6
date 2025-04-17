@@ -4,6 +4,8 @@ import models.Vehiculo;
 
 public interface INodo {
 
+    // Getter y Setters
+
     public Vehiculo getDato();
     public void setDato(Vehiculo vehiculo);
     public INodo getSiguiente();

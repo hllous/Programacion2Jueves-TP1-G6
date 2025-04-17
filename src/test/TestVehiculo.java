@@ -10,5 +10,6 @@ public class TestVehiculo {
         System.out.println("Color del auto:" + v1.getColor());
         System.out.println(v1.toString());
 
+
     }
 }
