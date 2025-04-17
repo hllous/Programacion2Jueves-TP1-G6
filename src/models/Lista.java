@@ -109,15 +109,6 @@ public class Lista implements ILista {
                     contador++;
                 }
 
-                /*INodo aux = actual.getSiguiente();
-
-                if (aux.getSiguiente() == null) {
-                    aux.getAnterior().setSiguiente(null);
-                } else {
-                    aux.getAnterior().setSiguiente(aux.getSiguiente());
-                    aux.getSiguiente().setAnterior(aux.getAnterior());
-                }*/
-
                 actual.setSiguiente(actual.getSiguiente().getSiguiente());
 
 
