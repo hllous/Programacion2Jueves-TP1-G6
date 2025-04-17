@@ -1,5 +1,5 @@
 ﻿# Programacion2Jueves-TP1-G6
-Participantes:
+Integrantes:
 - Iriarte, Facundo (1157051)
 - Kim, Pablo Leonardo (1162102)
 - Marolda Ezequiel, Guido (1140074)
