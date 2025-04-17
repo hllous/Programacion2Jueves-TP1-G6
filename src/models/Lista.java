@@ -116,8 +116,6 @@ public class Lista implements ILista {
                     aux++;
                 }
                 INodo aux2 = actual;
-                System.out.println(aux2.getAnterior());
-                System.out.println(actual.getAnterior());
 
                 actual.setSiguiente(actual.getSiguiente().getSiguiente());
 
