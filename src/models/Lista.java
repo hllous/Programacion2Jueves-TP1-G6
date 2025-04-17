@@ -128,7 +128,6 @@ public class Lista implements ILista {
                     return;
                 }
 
-
                 if (actual == primero) {
                     // Elimino primero
                     primero = primero.getSiguiente();
@@ -142,9 +141,6 @@ public class Lista implements ILista {
                     actual.getAnterior().setSiguiente(actual.getSiguiente());
                     actual.getSiguiente().setAnterior(actual.getAnterior());
                 }
-
-
-
             }
         }
     }
