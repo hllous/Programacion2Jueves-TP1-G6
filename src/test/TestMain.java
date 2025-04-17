@@ -43,10 +43,10 @@ public class TestMain {
 
         l.insertarPrimero(v4);
         l.insertarUltimo(v5);
-        l.mostrarLista();
+        l.mostrarListaPrincipioFinal();
         System.out.println();
 
-        System.out.println("2) Pruebas Eliminar e Imprimir\n");
+        /*System.out.println("2) Pruebas Eliminar e Imprimir\n");
         System.out.println("Elimino el primero e imprimo");
         l.eliminarPrimero();
         l.mostrarLista();
@@ -54,7 +54,9 @@ public class TestMain {
 
         System.out.println("Elimino el 2do e imprimo solo y en conjunto");
         l.eliminarPosicion(1);
-        l.mostrarLista();
+        l.mostrarLista();*/
+
+        l.mostrarListaFinalPrincipio();
 
 
     }

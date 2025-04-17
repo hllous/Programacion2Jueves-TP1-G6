@@ -9,8 +9,9 @@ public class Nodo implements INodo {
     private INodo anterior;
 
     public Nodo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
-        this.siguiente = null;
+        this.vehiculo=vehiculo;
+        this.siguiente=null;
+        this.anterior=null;
     }
 
     // Getter y Setters

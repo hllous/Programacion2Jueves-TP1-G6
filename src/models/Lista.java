@@ -10,7 +10,7 @@ public class Lista implements ILista {
     // Constructor
 
     public Lista() {
-        this.primero = null;
+        this.primero=null;
         this.ultimo=null;
     }
 
@@ -22,8 +22,6 @@ public class Lista implements ILista {
         if(esVacia()){
             primero=nuevo;
             ultimo=nuevo;
-            primero.setSiguiente(ultimo);
-            ultimo.setAnterior(primero);
         } else {
             primero.setAnterior(nuevo);
             nuevo.setSiguiente(primero);
@@ -38,8 +36,6 @@ public class Lista implements ILista {
         if (esVacia()) {
             primero=nuevo;
             ultimo=nuevo;
-            primero.setSiguiente(ultimo);
-            ultimo.setAnterior(primero);
         } else {
             ultimo.setSiguiente(nuevo);
             nuevo.setAnterior(ultimo);
@@ -51,7 +47,6 @@ public class Lista implements ILista {
     public void eliminarPrimero() {
         if (!esVacia()) {
             primero = primero.getSiguiente();
-            primero.setAnterior(null);
         }
     }
 
@@ -64,25 +59,44 @@ public class Lista implements ILista {
 
     @Override
     public void insertarPosicion(Vehiculo vehiculo, int posicion) {
+
+        // Caso primera posicion
         if (posicion == 0) {
             insertarPrimero(vehiculo);
         } else {
-
             INodo nuevo = new Nodo(vehiculo);
             INodo actual = primero;
             int contador = 0;
+            System.out.println(actual.getAnterior());
+            System.out.println(actual.getAnterior());
+            System.out.println(actual.getAnterior());
+            System.out.println(actual.getAnterior());
+            System.out.println(actual.getAnterior());
+            System.out.println(actual.getAnterior());
+            System.out.println(actual.getAnterior());
 
             while (actual != null && contador < posicion - 1) {
                 actual = actual.getSiguiente();
                 contador++;
             }
 
-            if (actual == null) {
-                throw new IndexOutOfBoundsException("Posición fuera de rango");
+            if (actual == null || actual.getSiguiente() == null) {
+                insertarUltimo(vehiculo);
+            } else {
+                // Guardo el siguiente en otra variable asi se aplica bien los set.
+
+                INodo siguiente = actual.getSiguiente();
+
+                nuevo.setAnterior(actual);
+                nuevo.setSiguiente(siguiente);
+
+
+                actual.setSiguiente(nuevo);
+                if (siguiente != null) {
+                    siguiente.setAnterior(nuevo);
+                }
             }
 
-            nuevo.setSiguiente(actual.getSiguiente());
-            actual.setSiguiente(nuevo);
         }
     }
 
@@ -108,8 +122,13 @@ public class Lista implements ILista {
                     actual = actual.getSiguiente();
                     aux++;
                 }
+                INodo aux2 = actual;
+                System.out.println(aux2.getAnterior());
+                System.out.println(actual.getAnterior());
 
                 actual.setSiguiente(actual.getSiguiente().getSiguiente());
+
+
 
 
             }
@@ -180,7 +199,7 @@ public class Lista implements ILista {
     }
 
     @Override
-    public void mostrarLista() {
+    public void mostrarListaPrincipioFinal() {
         INodo actual = primero;
         while (actual != null) {
             System.out.print(actual.getDato() + " -> \n");
@@ -188,6 +207,17 @@ public class Lista implements ILista {
         }
         System.out.println("FinLista");
     }
+
+    @Override
+    public void mostrarListaFinalPrincipio() {
+        INodo actual = ultimo;
+        while (actual != null) {
+            System.out.print(actual.getDato() + " <- \n");
+            actual = actual.getAnterior();
+        }
+        System.out.println("InicioLista");
+    }
+
 
     @Override
     public boolean esVacia() {

@@ -25,7 +25,8 @@ public interface ILista {
 
     public int cantidadElementos();
     public int buscarSecuencial(Vehiculo dato);
-    public void mostrarLista();
+    public void mostrarListaPrincipioFinal();
+    public void mostrarListaFinalPrincipio();
     public boolean esVacia();
 
 }
