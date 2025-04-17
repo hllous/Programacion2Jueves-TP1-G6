@@ -86,21 +86,16 @@ public class Lista implements ILista {
                 contador++;
             }
 
-            if (actual == null || actual.getSiguiente() == null) {
-                insertarUltimo(vehiculo);
+            if (actual == ultimo) {
+                actual.setSiguiente(nuevo);
+                nuevo.setAnterior(actual);
+                ultimo = nuevo;
             } else {
-                // Guardo el siguiente en otra variable asi se aplica bien los set.
-
                 INodo siguiente = actual.getSiguiente();
-
                 nuevo.setAnterior(actual);
                 nuevo.setSiguiente(siguiente);
-
-
                 actual.setSiguiente(nuevo);
-                if (siguiente != null) {
-                    siguiente.setAnterior(nuevo);
-                }
+                siguiente.setAnterior(nuevo);
             }
         }
     }
@@ -133,21 +128,21 @@ public class Lista implements ILista {
                     return;
                 }
 
-                // Guardo el siguiente en otra variable asi se aplica bien los set.
-                INodo anterior = actual.getAnterior();
-                INodo siguiente = actual.getSiguiente();
 
-                if (anterior != null) {
-                    anterior.setSiguiente(siguiente);
+                if (actual == primero) {
+                    // Elimino primero
+                    primero = primero.getSiguiente();
+                    primero.setAnterior(null);
+                } else if (actual == ultimo) {
+                    // Elimino último
+                    ultimo = actual.getAnterior();
+                    ultimo.setSiguiente(null);
                 } else {
-                    primero = siguiente;
+                    // Eliminando nodo en medio
+                    actual.getAnterior().setSiguiente(actual.getSiguiente());
+                    actual.getSiguiente().setAnterior(actual.getAnterior());
                 }
 
-                if (siguiente != null) {
-                    siguiente.setAnterior(anterior);
-                } else {
-                    ultimo = anterior;
-                }
 
 
             }
