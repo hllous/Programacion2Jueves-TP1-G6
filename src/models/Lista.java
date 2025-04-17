@@ -101,12 +101,12 @@ public class Lista implements ILista {
                 eliminarPrimero();
             } else {
                 INodo actual = primero;
-                int contador = 0;
+                int aux = 0;
 
                 // Limite: (Llego al final de la lista) && (Llego a la posicion deseada)
-                while (actual != null && contador < posicion-1) {
+                while (actual != null && aux < posicion-1) {
                     actual = actual.getSiguiente();
-                    contador++;
+                    aux++;
                 }
 
                 actual.setSiguiente(actual.getSiguiente().getSiguiente());
