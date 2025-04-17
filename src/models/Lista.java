@@ -133,6 +133,7 @@ public class Lista implements ILista {
                     return;
                 }
 
+                // Guardo el siguiente en otra variable asi se aplica bien los set.
                 INodo anterior = actual.getAnterior();
                 INodo siguiente = actual.getSiguiente();
 
