@@ -46,15 +46,15 @@ public class TestMain {
         l.mostrarListaPrincipioFinal();
         System.out.println();
 
-        /*System.out.println("2) Pruebas Eliminar e Imprimir\n");
+        System.out.println("2) Pruebas Eliminar e Imprimir\n");
         System.out.println("Elimino el primero e imprimo");
         l.eliminarPrimero();
-        l.mostrarLista();
+        l.mostrarListaPrincipioFinal();
         System.out.println();
 
         System.out.println("Elimino el 2do e imprimo solo y en conjunto");
         l.eliminarPosicion(1);
-        l.mostrarLista();*/
+        l.mostrarListaPrincipioFinal();
 
         l.mostrarListaFinalPrincipio();
 

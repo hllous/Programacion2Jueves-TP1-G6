@@ -46,14 +46,27 @@ public class Lista implements ILista {
     @Override
     public void eliminarPrimero() {
         if (!esVacia()) {
-            primero = primero.getSiguiente();
+            if (primero == ultimo) {
+                primero = null;
+                ultimo = null;
+            } else {
+                primero = primero.getSiguiente();
+                primero.setAnterior(null);
+            }
         }
     }
 
+
     @Override
     public void eliminarUltimo() {
-        if (!esVacia()){
-            ultimo = ultimo.getAnterior();
+        if (!esVacia()) {
+            if (primero == ultimo) {
+                primero = null;
+                ultimo = null;
+            } else {
+                ultimo = ultimo.getAnterior();
+                ultimo.setSiguiente(null);
+            }
         }
     }
 
@@ -89,7 +102,6 @@ public class Lista implements ILista {
                     siguiente.setAnterior(nuevo);
                 }
             }
-
         }
     }
 
@@ -115,9 +127,27 @@ public class Lista implements ILista {
                     actual = actual.getSiguiente();
                     aux++;
                 }
-                INodo aux2 = actual;
 
-                actual.setSiguiente(actual.getSiguiente().getSiguiente());
+                if (actual == null) {
+                    System.out.println("Posición fuera de rango.");
+                    return;
+                }
+
+                INodo anterior = actual.getAnterior();
+                INodo siguiente = actual.getSiguiente();
+
+                if (anterior != null) {
+                    anterior.setSiguiente(siguiente);
+                } else {
+                    primero = siguiente;
+                }
+
+                if (siguiente != null) {
+                    siguiente.setAnterior(anterior);
+                } else {
+                    ultimo = anterior;
+                }
+
 
             }
         }
