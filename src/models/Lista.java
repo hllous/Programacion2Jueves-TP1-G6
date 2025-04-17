@@ -221,11 +221,12 @@ public class Lista implements ILista {
     @Override
     public void mostrarListaFinalPrincipio() {
         INodo actual = ultimo;
+        System.out.print("InicioLista --->");
         while (actual != null) {
-            System.out.print(actual.getDato() + " <- \n");
+            System.out.print(actual.getDato() + " -> \n");
             actual = actual.getAnterior();
         }
-        System.out.println("InicioLista");
+
     }
 
 

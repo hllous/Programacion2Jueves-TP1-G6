@@ -55,8 +55,15 @@ public class TestMain {
         System.out.println("Elimino el 2do e imprimo solo y en conjunto");
         l.eliminarPosicion(1);
         l.mostrarListaPrincipioFinal();
-
         l.mostrarListaFinalPrincipio();
+        System.out.println();
+
+        System.out.println("Elimino todos e imprimo");
+        l.eliminarPrimero();
+        l.eliminarUltimo();
+        l.eliminarPosicion(0);
+        l.mostrarListaPrincipioFinal();
+
 
 
     }
