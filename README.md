@@ -10,5 +10,5 @@ Enunciado:
 1) Crear, modificar o investigar los archivos INodo, Nodo, ILista y Lista, hacer las mismas
 primitivas que teníamos con la lista simplemente enlazada.
 
-3) Una vez creado eso, hacer que una Persona, tenga una Lista de Vehículos (usando
+2) Una vez creado eso, hacer que una Persona, tenga una Lista de Vehículos (usando
 doblemente enlazada), probar las funciones básicas en el Test.
