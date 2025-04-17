@@ -67,13 +67,6 @@ public class Lista implements ILista {
             INodo nuevo = new Nodo(vehiculo);
             INodo actual = primero;
             int contador = 0;
-            System.out.println(actual.getAnterior());
-            System.out.println(actual.getAnterior());
-            System.out.println(actual.getAnterior());
-            System.out.println(actual.getAnterior());
-            System.out.println(actual.getAnterior());
-            System.out.println(actual.getAnterior());
-            System.out.println(actual.getAnterior());
 
             while (actual != null && contador < posicion - 1) {
                 actual = actual.getSiguiente();
