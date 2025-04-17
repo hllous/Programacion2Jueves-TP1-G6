@@ -6,9 +6,17 @@ import interfaces.*;
 public class TestPersona {
     public static void main(String[] args) {
 
-        Persona persona1 = new Persona("Nicolas",21);
+        Persona p1 = new Persona("Nicolas",21);
+
+        System.out.println(p1.toString());
+
+        p1.setEdad(22);
+        p1.setNombre("Guido");
+
+        System.out.println(p1.toString());
+
+
+
 
     }
-    Persona persona1 = new Persona("Nicolas",21);
-
 }

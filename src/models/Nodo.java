@@ -4,25 +4,25 @@ import interfaces.*;
 
 public class Nodo implements INodo {
 
-    private int dato;
+    private Vehiculo vehiculo;
     private INodo siguiente;
     private INodo anterior;
 
-    public Nodo(int dato) {
-        this.dato = dato;
+    public Nodo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
         this.siguiente = null;
     }
 
     // Getter y Setters
 
     @Override
-    public int getDato() {
-        return dato;
+    public Vehiculo getDato() {
+        return vehiculo;
     }
 
     @Override
-    public void setDato(int dato) {
-        this.dato = dato;
+    public void setDato(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
     }
 
     @Override

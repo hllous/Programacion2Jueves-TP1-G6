@@ -17,15 +17,15 @@ public class Lista implements ILista {
     }
 
     @Override
-    public void insertarPrimero(int dato) {
-        INodo nuevo = new Nodo(dato);
+    public void insertarPrimero(Vehiculo vehiculo) {
+        INodo nuevo = new Nodo(vehiculo);
         nuevo.setSiguiente(primero);
         primero = nuevo;
     }
 
     @Override
-    public void insertarUltimo(int dato) {
-        INodo nuevo = new Nodo(dato);
+    public void insertarUltimo(Vehiculo vehiculo) {
+        INodo nuevo = new Nodo(vehiculo);
         if (esVacia()) {
             primero = nuevo;
         } else {
@@ -34,13 +34,13 @@ public class Lista implements ILista {
     }
 
     @Override
-    public void insertarPosicion(int dato, int posicion) {
+    public void insertarPosicion(Vehiculo vehiculo, int posicion) {
         if (posicion == 0) {
-            insertarPrimero(dato);
+            insertarPrimero(vehiculo);
             return;
         }
 
-        INodo nuevo = new Nodo(dato);
+        INodo nuevo = new Nodo(vehiculo);
         INodo actual = primero;
         int contador = 0;
 
@@ -107,13 +107,13 @@ public class Lista implements ILista {
     // Obtener
 
     @Override
-    public int obtenerPrimero() {
+    public Vehiculo obtenerPrimero() {
         if (esVacia()) throw new IllegalStateException("Lista vacía");
         return primero.getDato();
     }
 
     @Override
-    public int obtenerUltimo() {
+    public Vehiculo obtenerUltimo() {
         if (esVacia()) throw new IllegalStateException("Lista vacía");
 
         INodo actual = primero;
@@ -124,7 +124,7 @@ public class Lista implements ILista {
     }
 
     @Override
-    public int obtenerPosicion(int posicion) {
+    public Vehiculo obtenerPosicion(int posicion) {
         INodo actual = primero;
         int contador = 0;
 
@@ -152,12 +152,12 @@ public class Lista implements ILista {
     }
 
     @Override
-    public int buscarSecuencial(int dato) {
+    public int buscarSecuencial(Vehiculo vehiculo) {
         INodo actual = primero;
         int posicion = 0;
 
         while (actual != null) {
-            if (actual.getDato() == dato) {
+            if (actual.getDato() == vehiculo) {
                 return posicion;
             }
             actual = actual.getSiguiente();
@@ -165,26 +165,6 @@ public class Lista implements ILista {
         }
 
         return -1; // no encontrado
-    }
-
-    @Override
-    public void ordenarLista() {
-        if (esVacia() || primero.getSiguiente() == null) return;
-
-        boolean cambiado;
-        do {
-            cambiado = false;
-            INodo actual = primero;
-            while (actual.getSiguiente() != null) {
-                if (actual.getDato() > actual.getSiguiente().getDato()) {
-                    int temp = actual.getDato();
-                    actual.setDato(actual.getSiguiente().getDato());
-                    actual.getSiguiente().setDato(temp);
-                    cambiado = true;
-                }
-                actual = actual.getSiguiente();
-            }
-        } while (cambiado);
     }
 
     @Override

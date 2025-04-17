@@ -55,7 +55,7 @@ public class Vehiculo {
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", color='" + color + '\'' +
-                ", capacidadTanque=" + capacidadTanque +
+                ", capacidadTanque=" + capacidadTanque + "Lts" +
                 ", tipoCombustible='" + tipoCombustible + '\'' +
                 ", tipoCaja='" + tipoCaja + '\'' +
                 '}';

@@ -1,9 +1,11 @@
 package interfaces;
 
+import models.Vehiculo;
+
 public interface INodo {
 
-    public int getDato();
-    public void setDato(int dato);
+    public Vehiculo getDato();
+    public void setDato(Vehiculo vehiculo);
     public INodo getSiguiente();
     public void setSiguiente(INodo nodo);
     public INodo getAnterior();
