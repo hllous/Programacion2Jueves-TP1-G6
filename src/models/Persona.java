@@ -6,7 +6,7 @@ public class Persona {
 
     private String nombre;
     private int edad;
-    private Lista[] vehiculos;
+    private Lista vehiculos;
 
     // Getter y Setters
 
@@ -14,8 +14,8 @@ public class Persona {
     public void setNombre(String nombre) { this.nombre = nombre; }
     public int getEdad() { return edad; }
     public void setEdad(int edad) { this.edad = edad; }
-    public Lista[] getVehiculos() { return vehiculos; }
-    public void setVehiculos(Lista[] vehiculos) { this.vehiculos = vehiculos;}
+    public Lista getVehiculos() { return vehiculos; }
+    public void setVehiculos(Lista vehiculos) { this.vehiculos = vehiculos;}
 
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
@@ -27,7 +27,7 @@ public class Persona {
         return "Persona{" +
                 "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
-                ", vehiculos=" + Arrays.toString(vehiculos) +
+                ", vehiculos=" + vehiculos +
                 '}';
     }
 }

@@ -14,6 +14,8 @@ public class TestMain {
         Vehiculo v5 = new Vehiculo("LKV 108","Fennec","A pedal","Boost",100,"Blanco Titanio","Fennec UltraBoost");
         Lista l = new Lista();
 
+        p.setVehiculos(l);
+
         System.out.println("----------------------------------------");
         System.out.println("Set de Pruebas de lista N°1\n");
         System.out.println("1) Pruebas Obtener e Imprimir");
