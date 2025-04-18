@@ -17,21 +17,21 @@ public class TestMain {
         System.out.println("----------------------------------------");
         System.out.println("Set de Pruebas de lista N°1\n");
         System.out.println("1) Pruebas Obtener e Imprimir");
-        System.out.println("Ingreso el vehiculo N°1 como primero, imprimo el primero y el ultimo:\n");
+        System.out.println("a) Ingreso el vehiculo N°1 como primero, imprimo el primero y el ultimo:\n");
 
         l.insertarPrimero(v1);
         System.out.println(l.obtenerPrimero());
         System.out.println(l.obtenerUltimo());
         System.out.println();
 
-        System.out.println("Ingreso el vehiculo N°2 como ultimo, imprimo el primero y el ultimo:\n");
+        System.out.println("b) Ingreso el vehiculo N°2 como ultimo, imprimo el primero y el ultimo:\n");
 
         l.insertarUltimo(v2);
         System.out.println(l.obtenerPrimero());
         System.out.println(l.obtenerUltimo());
         System.out.println();
 
-        System.out.println("Ingreso el vehiculo N°3 en la posicion 1, imprimo el primero, el del medio y el ultimo:\n");
+        System.out.println("c) Ingreso el vehiculo N°3 en la posicion 1, imprimo el primero, el del medio y el ultimo:\n");
 
         l.insertarPosicion(v3,1);
         System.out.println(l.obtenerPrimero());
@@ -39,7 +39,7 @@ public class TestMain {
         System.out.println(l.obtenerUltimo());
         System.out.println();
 
-        System.out.println("Agrego los vehiculos N°4 y N°5 e imprimo:\n");
+        System.out.println("d) Agrego los vehiculos N°4 y N°5 e imprimo:\n");
 
         l.insertarPrimero(v4);
         l.insertarUltimo(v5);
@@ -47,18 +47,19 @@ public class TestMain {
         System.out.println();
 
         System.out.println("2) Pruebas Eliminar e Imprimir\n");
-        System.out.println("Elimino el primero e imprimo");
+        System.out.println("a) Elimino el primero e imprimo");
         l.eliminarPrimero();
         l.mostrarListaPrincipioFinal();
         System.out.println();
 
-        System.out.println("Elimino el 2do e imprimo solo y en conjunto");
+        System.out.println("b) Elimino el 2do e imprimo solo y en conjunto");
         l.eliminarPosicion(1);
         l.mostrarListaPrincipioFinal();
+        System.out.println();
         l.mostrarListaFinalPrincipio();
         System.out.println();
 
-        System.out.println("Elimino todos e imprimo");
+        System.out.println("c) Elimino todos e imprimo");
         l.eliminarPrimero();
         l.eliminarUltimo();
         l.eliminarPosicion(0);

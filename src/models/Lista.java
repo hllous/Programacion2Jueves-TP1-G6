@@ -86,10 +86,10 @@ public class Lista implements ILista {
                 contador++;
             }
 
-            if (actual == ultimo) {
-                actual.setSiguiente(nuevo);
-                nuevo.setAnterior(actual);
-                ultimo = nuevo;
+            if(actual==primero){
+                insertarPrimero(vehiculo);
+            } else if (actual == ultimo) {
+                insertarUltimo(vehiculo);
             } else {
                 INodo siguiente = actual.getSiguiente();
                 nuevo.setAnterior(actual);
@@ -108,39 +108,24 @@ public class Lista implements ILista {
         if (esVacia()) {
             System.out.println("No se pudo eliminar la posicion" + posicion + "ya que la lista esta vacia");
         } else {
+            INodo actual = primero;
+            int aux = 0;
 
-            // Caso posicion es la primera
+            // Limite: (Llego al final de la lista) && (Llego a la posicion deseada)
+            while (actual != null && aux < posicion) {
+                actual = actual.getSiguiente();
+                aux++;
+            }
 
-            if (posicion == 0) {
+            if (actual == null) {
+                System.out.println("El dato en esa posicion no existe");
+            } else if (actual == primero) {
                 eliminarPrimero();
-            } else {
-                INodo actual = primero;
-                int aux = 0;
-
-                // Limite: (Llego al final de la lista) && (Llego a la posicion deseada)
-                while (actual != null && aux < posicion-1) {
-                    actual = actual.getSiguiente();
-                    aux++;
-                }
-
-                if (actual == null) {
-                    System.out.println("Posición fuera de rango.");
-                    return;
-                }
-
-                if (actual == primero) {
-                    // Elimino primero
-                    primero = primero.getSiguiente();
-                    primero.setAnterior(null);
-                } else if (actual == ultimo) {
-                    // Elimino último
-                    ultimo = actual.getAnterior();
-                    ultimo.setSiguiente(null);
-                } else {
-                    // Eliminando nodo en medio
-                    actual.getAnterior().setSiguiente(actual.getSiguiente());
-                    actual.getSiguiente().setAnterior(actual.getAnterior());
-                }
+            } else if(actual==ultimo) {
+                eliminarUltimo();
+            }else {
+                actual.getAnterior().setSiguiente(actual.getSiguiente());
+                actual.getSiguiente().setAnterior(actual.getAnterior());
             }
         }
     }
@@ -211,6 +196,7 @@ public class Lista implements ILista {
     @Override
     public void mostrarListaPrincipioFinal() {
         INodo actual = primero;
+        System.out.print("InicioLista \n-> ");
         while (actual != null) {
             System.out.print(actual.getDato() + " -> \n");
             actual = actual.getSiguiente();
@@ -221,12 +207,12 @@ public class Lista implements ILista {
     @Override
     public void mostrarListaFinalPrincipio() {
         INodo actual = ultimo;
-        System.out.print("InicioLista --->");
+        System.out.print("InicioLista \n-> ");
         while (actual != null) {
             System.out.print(actual.getDato() + " -> \n");
             actual = actual.getAnterior();
         }
-
+        System.out.println("FinLista");
     }
 
 
