@@ -77,25 +77,35 @@ public class Lista implements ILista {
         if (posicion == 0) {
             insertarPrimero(vehiculo);
         } else {
-            INodo nuevo = new Nodo(vehiculo);
             INodo actual = primero;
             int contador = 0;
 
-            while (actual != null && contador < posicion - 1) {
+            while (actual != null && contador < posicion) {
                 actual = actual.getSiguiente();
                 contador++;
             }
 
-            if(actual==primero){
+            if(actual==primero){    // Caso si es primero
                 insertarPrimero(vehiculo);
-            } else if (actual == ultimo) {
-                insertarUltimo(vehiculo);
+            } else if (actual == ultimo ) {     // Caso si es ultimo
+
+                if(cantidadElementos()>2){
+                    insertarUltimo(vehiculo);
+                } else {
+                    INodo nuevo = new Nodo(vehiculo);
+                    nuevo.setSiguiente(ultimo);
+                    nuevo.setAnterior(primero);
+                    primero.setSiguiente(nuevo);
+                    ultimo.setAnterior(nuevo);
+                }
+
+
             } else {
-                INodo siguiente = actual.getSiguiente();
+                INodo nuevo = new Nodo(vehiculo);
+                nuevo.setSiguiente(actual.getSiguiente());
                 nuevo.setAnterior(actual);
-                nuevo.setSiguiente(siguiente);
+                actual.getSiguiente().setAnterior(nuevo);
                 actual.setSiguiente(nuevo);
-                siguiente.setAnterior(nuevo);
             }
         }
     }
@@ -171,9 +181,10 @@ public class Lista implements ILista {
         INodo actual = primero;
 
         while (actual != null) {
-            contador++;
             actual = actual.getSiguiente();
+            contador++;
         }
+
         return contador;
     }
 
